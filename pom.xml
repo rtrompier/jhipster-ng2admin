@@ -633,8 +633,6 @@
                                         <goals>
                                             <goal>install-node-and-npm</goal>
                                             <goal>npm</goal>
-                                            <goal>bower</goal>
-                                            <goal>gulp</goal>
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
@@ -692,7 +690,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <configuration>
-                            <warSourceDirectory>src/main/webapp/</warSourceDirectory>
+                            <warSourceDirectory>dist/</warSourceDirectory>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -748,31 +746,12 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>bower install</id>
+                                <id>npm build</id>
                                 <goals>
-                                    <goal>bower</goal>
+                                    <goal>npm</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>install --no-color</arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>gulp build</id>
-                                <goals>
-                                    <goal>gulp</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>build --no-notification</arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>gulp test</id>
-                                <goals>
-                                    <goal>gulp</goal>
-                                </goals>
-                                <phase>test</phase>
-                                <configuration>
-                                    <arguments>test --no-notification</arguments>
+                                    <arguments>run build:prod</arguments>
                                 </configuration>
                             </execution>
                         </executions>
@@ -793,6 +772,11 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <configuration>
                             <warSourceDirectory>target/www/</warSourceDirectory>
+                            <webResources>
+                                <resource>
+                                    <directory>dist</directory>
+                                </resource>
+                            </webResources>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -846,7 +830,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <configuration>
-                            <warSourceDirectory>src/main/webapp/</warSourceDirectory>
+                            <warSourceDirectory>dist/</warSourceDirectory>
                         </configuration>
                     </plugin>
                     <plugin>

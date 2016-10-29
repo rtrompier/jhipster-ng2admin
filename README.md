@@ -4,7 +4,13 @@ This application was generated using JHipster 3.9.1 for the backend only.
 We use the template ng2-admin for the front end.
 
 
-## Development
+## Development Back End
+
+From your IDE, right-click on the “Application” class at the root of your Java package hierarchy, and run it directly. You should also be able to debug it as easily.
+
+The application will be available on http://localhost:8080.
+
+## Development Front End
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 1. [Node.js][]: We use Node to run a development web server and build the project.

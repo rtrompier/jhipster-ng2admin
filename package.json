@@ -106,7 +106,7 @@
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.35.0",
     "es7-reflect-metadata": "^1.6.0",
-    "electron": "^1.4.0"
+    "electron": "^9.1.0"
   },
   "scripts": {
     "rimraf": "rimraf",
